@@ -1,0 +1,27 @@
+
+<!doctype html>
+<html>
+<body>
+
+<h1>Reataurants:-</h1>
+<br>
+
+{% if details %}
+        <table>
+        <tr>
+        <th>Name</th>
+        <th>Average cost for two</th>
+        </tr>
+        {%for d in details%}
+          <tr>
+          <td><a href={{ d[1] }}>{{ d[0] }}</a></td>
+          <td>{{ d[2] }}</td>
+          </tr>
+        {% endfor %}
+        </table>
+      {% endif %}
+
+
+
+          </body>
+                </html>

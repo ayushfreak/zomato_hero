@@ -1,0 +1,18 @@
+<!doctype html>
+<html>
+<body style="background-image:url({{ url_for('static', filename='main.jpg') }});background-size: 1500px 700px; background-repeat: no-repeat;">
+<form action="" method="post" >
+          <input type="text" placeholder="City/Town" name="place" value="{{
+            request.form.place }}">
+             <input type='submit' value='submit'>
+             {% with messages = get_flashed_messages() %}
+      {% if messages %}
+       {% for message in messages %}
+    <div style="color:red;font-size:20px;">{{ message }}</div>
+       {% endfor %}
+      {% endif %}
+   {% endwith %}
+
+</form>
+</body>
+</html>

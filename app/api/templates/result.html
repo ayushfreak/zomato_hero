@@ -1,0 +1,58 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <title >RESTAURANTS LIST</title>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css">
+<style>
+table, td, th {
+    border: 1px solid black;
+	padding: 15px;
+    text-align: center;
+}
+
+table {
+    border-collapse: collapse;
+    width: 100%;
+    color:white;
+}
+
+th {
+    height: 50px;
+	font-size: 1.5em;
+}
+
+
+</style>
+
+</head>
+
+
+   <body style="background-image:url({{ url_for('static', filename='result.jpg')}});background-size:cover;" >
+<div class="container">
+  <h2 style="font-size: 4.0em;text-align:center; color:white;text-decoration: underline;">RESTAURANTS LIST</h2>
+<table >
+		<thead>
+        <tr>
+        <th >Name Of The Restaurant</th>
+        <th >Address</th>
+        <th>Locality</th>
+        <th>Restaurant Url</th>
+        </tr>
+		</thead>
+		 <tbody>
+        {%for x in range(length)%}
+          <tr>
+          <td style="font-size: 1.5em;font-weight: bold;">{{ data[x]["restaurant"]['name']}}</td>
+          <td style="font-size: 1.0em; font-weight: bold;">{{ data[x]["restaurant"]['location']['address'] }}</td>
+          <td style="font-size: 1.0em; font-weight: bold;">{{ data[x]["restaurant"]['location']['locality'] }}</td>
+          <td style="font-size: 1.0em; font-weight: bold;"><p style="color:black"><a href={{ data[x]["restaurant"]['events_url'] }}>Click For More Details</a></p></td>
+
+          </tr>
+        {% endfor %}
+		 </tbody>
+        </table>
+</div>
+</body>
+</html>

@@ -1,0 +1,19 @@
+<!doctype html>
+<html>
+<body style="background-image:url({{ url_for('static', filename='cuisine.jpg') }});height:42; width:42">
+  <form action="" method="post">
+          <legend style="color:white">CUISINE LIST</legend>
+          <p>
+             <select name = "my_cuisine_List">
+               {% for x in range(length) %}
+               <option value = {{dat[x]['cuisine']['cuisine_id']}} >{{dat[x]['cuisine']['cuisine_name']}}</option>
+               {% endfor %}
+                </select>
+
+
+          </p>
+
+       <input type='submit' value='Search'>
+</form>
+</body>
+</html>

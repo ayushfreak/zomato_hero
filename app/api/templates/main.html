@@ -1,0 +1,27 @@
+
+<!doctype html>
+<html>
+<body style="background-image:url({{ url_for('static', filename='main.jpg')}});background-size:cover;" >
+
+<h1>Enter Place to find Restaurants</h1>
+      <br>
+<form action="/" method="post">
+        <input type="text" placeholder="City/Town" name="place" value="{{
+          request.form.place }}">
+          {% if data %}
+
+
+          <select name="comp_select" class="selectpicker form-control">
+              {% for o in data %}
+              <option value={{ o[1] }}>{{ o[0] }}</option>
+              {% endfor %}
+            </select>
+            {% endif %}
+            <br>
+
+        <input class="btn btn-default" type="submit" value="Display">
+      </form>
+
+
+    </body>
+          </html>
